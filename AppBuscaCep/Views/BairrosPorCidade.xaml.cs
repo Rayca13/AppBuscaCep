@@ -53,10 +53,13 @@ public partial class BairrosPorCidade : ContentPage
 
             Cidade cidade_selecionada = disparador.SelectedItem as Cidade;
 
-            List<Bairro> arr_bairros = await DataService.GetEnderecoByCidade(
+            List<Bairro> arr_bairros = await DataService.GetBairrosByIdCidade(
                 cidade_selecionada.id_cidade);
 
+            lista_bairro.Clear();
+
             arr_bairros.ForEach(i => lista_bairro.Add(i));
+
         }
          catch(Exception ex) 
         {
