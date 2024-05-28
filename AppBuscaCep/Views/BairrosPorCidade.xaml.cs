@@ -32,7 +32,7 @@ public partial class BairrosPorCidade : ContentPage
 
             string? estado_selecionado = disparador.SelectedItem as string;
 
-            List<Cidade> arr_cidades = await DataService.GetEnderecoByEstado(
+            List<Cidade> arr_cidades = await DataService.GetCidadeByEstado(
                 estado_selecionado);
 
             lista_cidades.Clear();

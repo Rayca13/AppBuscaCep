@@ -53,8 +53,9 @@
                          AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
 
                 <Frame Opacity="0.95"
-                       BackgroundColor="#333"                      
-                       CornerRadius="#00A54F"
+                       BackgroundColor="#333"
+                       CornerRadius="10"
+                       BorderColor="#00A54F"
                        Padding="80">
 
                     <StackLayout>
