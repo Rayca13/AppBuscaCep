@@ -30,7 +30,7 @@ namespace AppBuscaCep.Services
             return end;
         }
 
-        public static async Task<List<Bairro>> GetBairrosByCidade(int id_cidade)
+        public static async Task<List<Bairro>> GetBairrosByIdCidade(int id_cidade)
         {
             List<Bairro> arr_bairros = new List<Bairro>();
 
@@ -79,14 +79,14 @@ namespace AppBuscaCep.Services
 
         public static async Task<List<Logradouro>>
 
-            GetLogradourosByBairrosAndIdCidade(
+            GetLogradourosByBairroAndIdCidade(
             string bairro, int id_cidade)
         {
             List<Logradouro> arr_logradouros = new List<Logradouro>();
 
             using (HttpClient client = new HttpClient()) 
             {
-                HttpResponseMessage response = new client.GetAsync(
+                HttpResponseMessage response = await client.GetAsync(
                     "https://cep.metoda.com.br/logradouro/by-bairro?id_cidade=" + id_cidade + "&bairro=" + bairro);
 
                 if (response.IsSuccessStatusCode)
@@ -104,12 +104,13 @@ namespace AppBuscaCep.Services
         public static async Task<List<Cep>> GetCepsByLogradouro(
             string logradouro)
         {
-            List<Cep> arr_cep = new List<Cep>();
+            List<Cep> arr_ceps = new List<Cep>();
 
             using (HttpClient client = new HttpClient()) 
             {
                 HttpResponseMessage response = await client.GetAsync(
-                    "https://cep.metoda.com.br/cep/by-logradouro?logradouro=" + logradouro);
+                    "https://cep.metoda.com.br/cep/by-logradouro?logradouro=" 
+                    + logradouro);
 
                 if (response.IsSuccessStatusCode) 
                 { 
@@ -127,7 +128,6 @@ namespace AppBuscaCep.Services
 
             return arr_ceps;
         }
-    }
-   
+    } 
 }
 
