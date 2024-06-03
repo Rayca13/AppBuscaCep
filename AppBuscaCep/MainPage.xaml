@@ -10,7 +10,7 @@
             <Button Text="Get Bairros" Clicked="Button_Clicked_1"/>
 
             <StackLayout Orientation="Horizontal">
-                <Entry x:Name="tx_cep" HorizontalOptions="FillAndExpand"/>
+                <Entry x:Name="txt_cep" HorizontalOptions="FillAndExpand"/>
                 <Button Text="Buscar" Clicked="Button_Clicked"/>
             </StackLayout>
 

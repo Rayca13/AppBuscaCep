@@ -56,6 +56,12 @@
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <MauiXaml Remove="Views\BairrosPorCidade.xaml" />
+	  <MauiXaml Remove="Views\Menu.xaml" />
+	</ItemGroup>
+
+
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />

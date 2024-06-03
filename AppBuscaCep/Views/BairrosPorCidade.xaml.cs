@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using AppBuscaCep.Models;
+﻿using AppBuscaCep.Models;
 using AppBuscaCep.Services;
+using System.Collections.ObjectModel;
 
 namespace AppBuscaCep.Views;
 
